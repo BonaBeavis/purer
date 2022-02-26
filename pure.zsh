@@ -24,7 +24,7 @@
 # \e[2K => clear everything on the current line
 
 PURER_PROMPT_COMMAND_COUNT=0
-STATUS_COLOR='cyan'
+STATUS_COLOR='#B0B0B0'
 
 # turns seconds into human readable time
 # 165392 => 1d 21h 56m 32s
@@ -67,8 +67,8 @@ prompt_pure_clear_screen() {
 
 # set STATUS_COLOR: cyan for "insert", green for "normal" mode.
 prompt_purer_vim_mode() {
-	STATUS_COLOR="${${KEYMAP/vicmd/green}/(main|viins)/cyan}"
-	prompt_pure_preprompt_render
+	STATUS_COLOR="${${KEYMAP/vicmd/#B0B0B0}/(main|viins)/#00C918}"
+	prompt_pure_preprompt_render precmd
 }
 
 prompt_pure_set_title() {
