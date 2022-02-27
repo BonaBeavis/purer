@@ -24,7 +24,7 @@
 # \e[2K => clear everything on the current line
 
 PURER_PROMPT_COMMAND_COUNT=0
-STATUS_COLOR='#B0B0B0'
+STATUS_COLOR='#00C918'
 
 # turns seconds into human readable time
 # 165392 => 1d 21h 56m 32s
@@ -150,9 +150,9 @@ prompt_pure_preprompt_render() {
 	# directory, colored by vim status
 	preprompt+="%B%F{$STATUS_COLOR}$path_formatting%f%b"
 	# git info
-	preprompt+="%F{$git_color}${vcs_info_msg_0_}${prompt_pure_git_dirty}%f"
+	preprompt+="%F{$git_color}${vcs_info_msg_0_}%F{red}${prompt_pure_git_dirty}%f"
 	# git pull/push arrows
-	preprompt+="%F{cyan}${prompt_pure_git_arrows}%f"
+	preprompt+="%F{red}${prompt_pure_git_arrows}%f"
 	# username and machine if applicable
 	preprompt+=$prompt_pure_username
 	# execution time
